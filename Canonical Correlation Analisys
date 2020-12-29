@@ -1,0 +1,41 @@
+
+Open and analysis data.
+
+
+NESCESSITA DE BIBLIOTECAS que estão no arquivo Principal Correlation Analysis
+
+
+library(vegan)
+dados <- read.csv("/home/oem/Documentos/guara18.csv", header = TRUE, check.names = FALSE)
+data <- na.omit(dados)
+
+dados <- read.csv("/home/oem/Documentos/artigo1/guara/guara.csv", header = TRUE, check.names = FALSE)
+dato <- selectByDate(dados, hour = 7:19)
+dados.ativo <- dato[2:289, -1]
+dado <- na.omit(dados.ativo)
+full<-cca(dado)
+summary(full)
+
+dado <- decostand(data, "log")
+summary(fit_model) # sumário dos resultados
+full<-cca(dado)
+inertcomp(full)
+summary(full)
+goodness(full)
+vif.cca(dado)
+
+date<-anova(full)
+summary(date)
+summary(full) # sumário dos resultados
+anova.cca(full)
+anova.cca(full, by="terms")
+anova.cca(full, by="axis")
+plot(full)
+plot
+
+data("varechem")
+summary(varechem)
+
+
+eig.val <- get_eigenvalue(full)
+eig.val
