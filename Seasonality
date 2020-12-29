@@ -1,0 +1,24 @@
+Open and plot data 
+
+calendarPlot(dados,pollutant = "Freq_284",year = 2017)
+timeVariation(dados,pollutant =c("Freq_210"), smooth = FALSE)
+scatterPlot(dados,x = "nox",y = "no2",type = "o3",smooth = FALSE,linear = TRUE,layout =c(2,2))
+scatterPlot(dados,x = "date",y = "Freq_210",trans = FALSE)
+smoothTrend(dados,pollutant =c("Freq_284", "Freq_245", "Freq_235", "Freq_210"),deseason = TRUE,simulate = TRUE)
+timePlot(dados,pollutant =c("Freq_284", "Freq_245", "Freq_235", "Freq_210"), avg.time = "month")
+polarAnnulus(dados,poll = "Freq_210",period = "season",main = "Season")
+summaryPlot(dados)
+conditionalQuantile(dados,obs = "Freq_284")
+TaylorDiagram(dados,obs = "Freq_210",type = "season")
+trendLevel(dados,pollutant = "Freq_284")
+linearRelation(dados, x = "Freq_245" , y = "Freq_284")
+scatterPlot(dados, x = "Freq_245" , y = "Freq_245")
+
+
+
+data <- selectByDate(dados,start = "01/10/2017",end = "30/10/2017")
+myOutput <- timeVariation(data,pollutant =c("Freq_210"), main = "Agosto-Setembro")
+plot(myOutput,subset = "hour", ylab = c(" ", " ", "Agosto-Setembro"))
+
+myOutput <- timeVariation(dados,pollutant =c("Freq_235"), smooth = FALSE, cols = "blue")
+plot(myOutput,subset = "month", ylab = c(" ", " ", "Agosto-Setembro"))
