@@ -1,0 +1,15 @@
+library(ncdf4) # package for netcdf manipulation
+library(raster) # package for raster manipulation
+library(rgdal) # package for geospatial analysis
+library(ggplot2)
+
+
+nc_data <- nc_open('/home/oem/Downloads/Documents-20201012T142558Z-001/Documents/Downloads/goes_1903-1711_tir_atto_15m.nc')
+{
+  sink('gimms3g_ndvi_1982-2012_metadata.txt')
+  print(nc_data)
+  sink()
+}
+t <- ncvar_get(nc_data, "time")
+lon <- ncvar_get(nc_data, "lon")
+lat <- ncvar_get(nc_data, "lat", verbose = F)
