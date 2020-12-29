@@ -1,7 +1,9 @@
 # Numerical Data Modeling
 
 
-Codes and material for numerical modeling, follows a brief description of the files:
+Repository under construction with codes and material for numerical modeling and everything related to its development (statistical analysis, neural networks, for example). 
+Follows a brief description of the files:
+
 
 
 ### Average Data With Date
