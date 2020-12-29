@@ -14,3 +14,5 @@ Information with date and similarities found from interannual seasonality
 Code to extract information and plot graphs in relation to the highlighted statistical analysis
 ### Python to R
 Convert data
+### Uncertainty-Aware Principal Component Analysis
+PCA's uncertainties article
