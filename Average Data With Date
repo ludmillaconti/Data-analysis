@@ -1,0 +1,30 @@
+
+
+import matplotlib.pyplot as plt
+import xarray as xr
+import numpy as np 
+
+ds = xr.open_dataset('sazonal2.nc')
+
+data = ds['Band1_df1'][0:15456]
+
+data = np.array(data).reshape(483, 32)
+dataDaily = np.mean(data, axis=1)
+dataDaily = np.matrix.flatten(dataDaily)
+
+data2 = ds['Band1_df1'][0:15360]
+data2 = np.array(data2).reshape(16, 960)
+dataMonthly = np.nanmean(data2, axis=1)
+dataMonthly = np.matrix.flatten(dataMonthly)
+
+var = dataMonthly
+# n = len(var)*15
+# times = np.arange(0, n , 15)
+times = np.arange(0, 16 , 1)
+
+ax = plt.subplots(figsize=(10, 4))
+plt.plot(times, var, color='grey')
+plt.ylabel('Temperatura de Brilho (K)', weight='bold')
+plt.xlabel('Mês', weight='bold')
+plt.title('Média Mensal', weight='bold')
+plt.savefig('media_mensal.png', dpi=400)
