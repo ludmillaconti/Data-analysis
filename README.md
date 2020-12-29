@@ -1,6 +1,8 @@
 # Numerical Data Modeling
 
-Codes, classes and material for numerical modeling, follows a brief description of the files:
+
+Codes and material for numerical modeling, follows a brief description of the files:
+
 
 ### Average Data With Date
 Code for plotting data means and graphs with data in Python
