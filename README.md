@@ -5,7 +5,7 @@
 
 
 
-Repository under construction with codes and material for numerical modeling and everything related to its development (statistical analysis, neural networks, for example). 
+Repository under construction with codes and material for numerical modeling and everything related to its development. 
 Follows a brief description of the files:
 
 
