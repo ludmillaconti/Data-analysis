@@ -1,0 +1,59 @@
+=%matplotlib inline
+from fastai.basics import *
+
+In this part of the lecture we explain Stochastic Gradient Descent (SGD) which is an optimization method commonly used in neural networks. We will illustrate the concepts with concrete examples.
+Linear Regression problem
+
+The goal of linear regression is to fit a line to a set of points.
+
+tensor([[-0.1957,  1.0000],
+        [ 0.1826,  1.0000],
+        [-0.1008,  1.0000],
+        [-0.1449,  1.0000],
+        [ 0.7091,  1.0000]])
+
+tensor([3., 2.])
+
+You want to find parameters (weights) a such that you minimize the error between the points and the line x@a. Note that here a is unknown. For a regression problem the most common error function or loss function is the mean squared error.
+
+Suppose we believe a = (-1.0,1.0) then we can compute y_hat which is our prediction and then compute our error.
+
+tensor(7.9356)
+
+So far we have specified the model (linear regression) and the evaluation criteria (or loss function). Now we need to handle optimization; that is, how do we find the best values for a? How do we find the best fitting linear regression.
+Gradient Descent
+
+We would like to find the values of a that minimize mse_loss.
+
+Gradient descent is an algorithm that minimizes functions. Given a function defined by a set of parameters, gradient descent starts with an initial set of parameter values and iteratively moves toward a set of parameter values that minimize the function. This iterative minimization is achieved by taking steps in the negative direction of the function gradient.
+
+Here is gradient descent implemented in PyTorch.
+
+Parameter containing:
+tensor([-1.,  1.], requires_grad=True)
+
+tensor(7.9356, grad_fn=<MeanBackward1>)
+tensor(1.4609, grad_fn=<MeanBackward1>)
+tensor(0.4824, grad_fn=<MeanBackward1>)
+tensor(0.1995, grad_fn=<MeanBackward1>)
+tensor(0.1147, grad_fn=<MeanBackward1>)
+tensor(0.0893, grad_fn=<MeanBackward1>)
+tensor(0.0816, grad_fn=<MeanBackward1>)
+tensor(0.0793, grad_fn=<MeanBackward1>)
+tensor(0.0786, grad_fn=<MeanBackward1>)
+tensor(0.0784, grad_fn=<MeanBackward1>)
+
+Animate it!
+
+In practice, we don't calculate on the whole file at once, but we use mini-batches.
+Vocab
+
+    Learning rate
+    Epoch
+    Minibatch
+    SGD
+    Model / Architecture
+    Parameters
+    Loss function
+
+For classification problems, we use cross entropy loss, also known as negative log likelihood loss. This penalizes incorrect confident predictions, and correct unconfident predictions.
